@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "71db02ea2507658cddb0",
+  "position": {
+    "x": 810.71489538397657,
+    "y": 351.498765830815,
+    "z": 0,
+    "height": 388.34944289372305,
+    "width": 867.40824471152735
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_EAP_GRP"
+                    }
+                  },
+                  "Property": "EAP Client Group ID"
+                }
+              },
+              "queryRef": "DIM_EAP_GRP.EAP Client Group ID",
+              "nativeQueryRef": "EAP Client Group ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DIM_EAP_GRP"
+                    }
+                  },
+                  "Property": "EAP Client Group Name"
+                }
+              },
+              "queryRef": "DIM_EAP_GRP.EAP Client Group Name",
+              "nativeQueryRef": "EAP Client Group Name"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "277174400b0953a16e71",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_EAP_GRP"
+              }
+            },
+            "Property": "EAP Client Group ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "109b07c6a550078e085d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_EAP_GRP"
+              }
+            },
+            "Property": "EAP Client Group Name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
