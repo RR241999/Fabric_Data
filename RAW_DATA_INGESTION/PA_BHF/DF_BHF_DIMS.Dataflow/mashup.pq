@@ -1,5 +1,11 @@
 [DefaultOutputDestinationSettings = [DestinationDefinition = [Kind = "Reference", QueryName = "DefaultDestination", IsNewTarget = true], UpdateMethod = [Kind = "Replace"], DestinationTypeSettings = [Kind = "Table"]], StagingDefinition = [Kind = "FastCopy"]]
 section Section1;
+shared DefaultDestination = let
+  Source = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false]),
+  #"Navigation 1" = Source{[workspaceId = "890304bc-64e8-46be-93d9-8ea5a5a56669"]}[Data],
+  #"Navigation 2" = #"Navigation 1"{[lakehouseId = "c0e64c56-d325-4096-ab45-1ef917f3c3db"]}[Data]
+in
+  #"Navigation 2";
 [BindToDefaultDestination = true]
 shared DIM_PRDA_BHFP = let
   Source = Snowflake.Databases(Server, Warehouse, [Role = null, CreateNavigationProperties = null, ConnectionTimeout = null, CommandTimeout = null]),
@@ -101,4 +107,3 @@ in
 shared Server = "carelon-eda_preprod.privatelink.snowflakecomputing.com" meta [IsParameterQuery = true, IsParameterQueryRequired = false, Type = type any, List = {"carelon-edaprod1.privatelink.snowflakecomputing.com", "carelon-eda_preprod.privatelink.snowflakecomputing.com", "carelon-eda_nonprod.privatelink.snowflakecomputing.com"}, DefaultValue = "carelon-eda_preprod.privatelink.snowflakecomputing.com"];
 shared Warehouse = "U01_PRDA_APP_WH_XL" meta [IsParameterQuery = true, IsParameterQueryRequired = false, Type = type any, List = {"P01_PRDA_APP_WH_XL", "U01_PRDA_APP_WH_XL", "D01_PRDA_APP_WH_XL"}, DefaultValue = "U01_PRDA_APP_WH_XL"];
 shared Database = "U01_PRDA" meta [IsParameterQuery = true, IsParameterQueryRequired = false, Type = type any, List = {"P01_PRDA", "U01_PRDA", "D01_PRDA"}, DefaultValue = "U01_PRDA"];
-shared DefaultDestination = Lakehouse.Contents([EnableFolding = false]){[workspaceId = "890304bc-64e8-46be-93d9-8ea5a5a56669"]}[Data]{[lakehouseId = "c0e64c56-d325-4096-ab45-1ef917f3c3db"]}[Data];
