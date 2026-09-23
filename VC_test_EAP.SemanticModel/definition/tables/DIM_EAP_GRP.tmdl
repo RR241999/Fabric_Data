@@ -33,6 +33,10 @@ table DIM_EAP_GRP
 
 		annotation SummarizationSetBy = Automatic
 
+	column test
+		dataType: string
+		lineageTag: f8cac0da-52c7-4a1d-b52f-7bf258d88ed7
+
 	partition 'New M Partition' = m
 		mode: dual
 		source =
