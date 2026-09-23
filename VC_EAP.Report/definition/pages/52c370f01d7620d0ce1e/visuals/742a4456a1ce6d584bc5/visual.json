@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "71db02ea2507658cddb0",
+  "name": "742a4456a1ce6d584bc5",
   "position": {
-    "x": 168.33419288292933,
-    "y": 281.21712222795253,
+    "x": 1220.4486899255414,
+    "y": 432.43940175348109,
     "z": 0,
-    "height": 388.34944289372305,
-    "width": 867.40824471152735
+    "height": 300,
+    "width": 300
   },
   "visual": {
     "visualType": "tableEx",
@@ -19,28 +19,28 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DIM_EAP_GRP"
+                      "Entity": "DIM_EAP_INCDNT_PROV_TYPE"
                     }
                   },
-                  "Property": "EAP Client Group ID"
+                  "Property": "EAP Incident Provider Type Code"
                 }
               },
-              "queryRef": "DIM_EAP_GRP.EAP Client Group ID",
-              "nativeQueryRef": "EAP Client Group ID"
+              "queryRef": "DIM_EAP_INCDNT_PROV_TYPE.EAP Incident Provider Type Code",
+              "nativeQueryRef": "EAP Incident Provider Type Code"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DIM_EAP_GRP"
+                      "Entity": "DIM_EAP_INCDNT_PROV_TYPE"
                     }
                   },
-                  "Property": "EAP Client Group Name"
+                  "Property": "INCDNT_PROV_TYPE_KEY"
                 }
               },
-              "queryRef": "DIM_EAP_GRP.EAP Client Group Name",
-              "nativeQueryRef": "EAP Client Group Name"
+              "queryRef": "DIM_EAP_INCDNT_PROV_TYPE.INCDNT_PROV_TYPE_KEY",
+              "nativeQueryRef": "INCDNT_PROV_TYPE_KEY"
             }
           ]
         }
@@ -51,32 +51,32 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "277174400b0953a16e71",
+        "name": "b5e13364c80c3d4e7679",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "DIM_EAP_GRP"
+                "Entity": "DIM_EAP_INCDNT_PROV_TYPE"
               }
             },
-            "Property": "EAP Client Group ID"
+            "Property": "EAP Incident Provider Type Code"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "109b07c6a550078e085d",
+        "name": "76e7360ad6b60bab350d",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "DIM_EAP_GRP"
+                "Entity": "DIM_EAP_INCDNT_PROV_TYPE"
               }
             },
-            "Property": "EAP Client Group Name"
+            "Property": "INCDNT_PROV_TYPE_KEY"
           }
         },
-        "type": "Categorical"
+        "type": "Advanced"
       }
     ]
   }
